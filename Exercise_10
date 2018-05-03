@@ -1,0 +1,14 @@
+String sentence;
+
+void settings() {
+  size(300, 300);
+}
+
+void setup() {
+  sentence = "My Name is Jeff. ";
+}
+
+void draw() {
+  background (0);
+  noLoop();
+}
