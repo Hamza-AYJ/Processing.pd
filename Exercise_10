@@ -1,14 +1,21 @@
-String sentence;
+String sentence= "My Name is Jeff. ";
+String [] words; 
+
+int fontSize = 24;
 
 void settings() {
   size(300, 300);
 }
 
 void setup() {
-  sentence = "My Name is Jeff. ";
+  fill(255);
+  words = sentence.split(" ");
+  textSize(fontSize);
 }
 
 void draw() {
-  background (0);
-  noLoop();
+  background (0);  
+  for (int i=0; i < words.length; i++) {
+    text(words[i], mouseX+50, mouseY + i * fontSize);
+  }
 }
