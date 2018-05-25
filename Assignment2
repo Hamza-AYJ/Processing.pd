@@ -1,0 +1,52 @@
+String enterPassword = "";
+
+String password1;
+String password2;
+String masterpassword;
+
+void setup() {
+  size(600, 600);
+  String[] password1 = loadStrings("password1.txt");
+  String[] password2 = loadStrings("password2.txt");
+  String[] masterpassword = loadStrings("masterpassword.txt");
+}
+
+void draw() {
+  background(0);
+  fill (255);
+  text (enterPassword, 30, 30);
+}
+
+void keyPressed() {
+  if (key == ENTER) {
+    enterPassword = "";
+  } else {
+    enterPassword = enterPassword + key;
+  }
+  println(enterPassword);
+
+  if (enterPassword.equals(password1) == true && key == ENTER) {
+    text("welcome user 1", 30, 50);
+    println("equal");
+  } else {
+    text("wrong password", 30, 50);
+    println("Not equal");
+  }
+  println(password1);
+  
+  if (enterPassword.equals(password2) == true && key == ENTER) {
+    text("welcome user 2", 30, 50);
+    println("equal");
+  } else {
+    text("wrong password", 30, 50);
+    println("Not equal");
+  }
+  
+  if (enterPassword.equals(masterpassword) == true && key == ENTER) {
+    text("welcome master user", 30, 50);
+    println("equal");
+  } else {
+    text("wrong password", 30, 50);
+    println("Not equal");
+  }
+}
